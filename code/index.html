@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+        <link rel="stylesheet" href="./public/styles/styles.css" />
+        <title>Atlas of the Forgotten Chile</title>
+    </head>
+    <body>
+        <div class="header">
+            <div class="page-name">Atlas of the Forgotten Chile</div>
+            <div class="about">
+                <!-- <a href="">About</a> -->
+                <button class="about-button" data-modal-target="#modal">About</button>
+            </div>
+        </div>
+        <div class="container">
+            <div class="map-container">
+                <div id="map"></div>
+                
+            </div>
+            <div class="page-container">
+                <div class="grid-container"></div>
+                
+            </div>
+        </div>
+        <div class="modal" id="modal">
+            <div class="modal-header">
+                <div class="title">Atlas of the Forgotten Chile</div>
+                <button data-close-button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                The <i>Atlas of the Forgotten Chile</i> is a visualization of some the thousands isolated rural and indigenous communities of Chile.
+                <br><br>According to the 2017 census, 12.2% of the chilean population live in rural areas (2,144,028 inhabitants aproximately), a population that is usually postponed by the public services and development. Many of these hamlets correspond to peasant and indigenous communities that have lived for years in the same land.
+                <br><br>In a context of Chile that has experienced its biggest social revolt in the last 30 years, that implied a revision of the social and political identity of the country, takes special relevance to acknowledge who are those people that construct the cultural soul of a nation in tension, mainly built in the big cities. The <i>Atlas of the Forgotten Chile</i> attempts to reveal and highlight all those small and forgotten communities that have no power at all, those not considered by government decisions because most of them don't even exist in maps. Those smalls communities are the aesthetics of a Chile who nobody cares about, even the forces of change that fight for a better country.
+                <br><br>This project was developed by <a href="https://guillemontecinos.cl/" target="_blank">Guillermo Montecinos</a> as a final project for the class <a href="https://github.com/all-maps-lie/all-maps-lie-2020" target="_blank">All Maps Lie</a> taught by <a href="https://jk-lee.com/" target="_blank">Joey K. Lee</a>. This beta version includes 142 settlements from the regions of Arica y Parinacota, and Tarapacá, which imagery was scraped from Google Maps.
+            </div>
+        </div>
+        <div id="overlay"></div>
+        <script src="./public/js/web-map.js"></script>
+    </body>
+</html>

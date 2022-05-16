@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body{
+  background-color: #fcfbf9;
+}
+
+.header{  
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+
+.header .page-name{
+  font-size: 40px;
+  display: inline-block;
+  pointer-events: none;
+}
+
+.header .about{
+  /* font-size: 30px; */
+  display: inline-block;
+  position: relative;
+  top: 10px;
+  right: 20px;
+  float: right;
+}
+
+.header .about .about-button {
+  font-size: 30px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+/* .header .about a{
+  text-decoration: none;
+  color: black;
+} */
+
+.container {
+  width: 100%;
+  /* height: 92%; */
+}
+
+.container .map-container {
+  display: inline-block;
+  height: 100%;
+  width: 33%;
+}
+
+.container .map-container #map {
+  width: 100%;
+  height: 100%;
+}
+
+.container .page-container {
+  /* background: red; */
+  margin-left: 10px;
+  display: inline-block;
+  vertical-align: top;
+  height: 100%;
+  width: 66%;
+  position: absolute;
+  overflow: auto;
+  scrollbar-width: none;
+}
+
+.container .page-container::-webkit-scrollbar{
+  display: none;
+}
+
+.grid-container{
+  margin-right: 6px;
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-auto-rows: 300px;
+  grid-gap: 10px;
+  grid-auto-flow: dense;
+}
+
+.grid-container .gallery-container .gallery-item{  
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.grid-container .gallery-container .gallery-item .image{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.grid-container .gallery-container .gallery-item .image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  cursor: pointer;
+  transition: .8s ease-in-out;
+}
+
+.grid-container .gallery-item:hover .image img{
+    transform: scale(2);
+}
+
+.grid-container .gallery-item .image img.active{
+  transform: scale(2);
+}
+
+.grid-container .gallery-item .text{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 22px;
+  text-align: left;
+  width: 80%;
+  opacity: 0;
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%); */
+  color: #fcfbf9;
+  pointer-events: none;
+  z-index: 4;
+  transition: .3s ease-in-out;
+}
+
+.grid-container .gallery-item .text .text-content {
+  margin: 0%;
+}
+
+/* .grid-container .gallery-item .text .text-content .town-name {
+  font-weight: 500;
+} */
+
+.grid-container .gallery-item .text .text-content .town-location {
+  font-size: 18px;
+  font-style: italic;
+}
+
+.grid-container .gallery-item:hover .text{
+    opacity: 1;
+}
+
+.grid-container .gallery-item .text.active{
+  opacity: 1;
+}
+
+/* 
+@media screen and (max-width:500px){
+    .container{
+        grid-template-columns: repeat(1,1fr);
+    }
+} */
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 67%;
+  transform: translate(-50%, 50%) scale(0);
+  border: 1px solid black;
+  /* border-radius: 10px; */
+  z-index: 10;
+  background-color: white;
+  width: 50%;
+  max-width: 90%;
+}
+
+.modal.active {
+  transform: translate(-50%, -33%) scale(1);
+}
+
+.modal-header {
+  font-family: 'Open Sans', sans-serif;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header .title{
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.modal-header .close-button{
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.modal-body {
+  font-family: 'Open Sans', sans-serif;
+  padding: 15px;
+}
+
+.modal-body a{
+  text-decoration: none;
+  color: black;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,.5);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
